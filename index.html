@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akses WhatsApp Premium</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;padding:24px 15px;
+  font-family:Arial,sans-serif;
+  background:#eff6f3;color:#17231f;
+}
+.card{
+  max-width:400px;margin:25px auto;
+  background:white;padding:25px;
+  border-radius:20px;text-align:center;
+  box-shadow:0 8px 30px #0001;
+}
+h2{margin-bottom:8px}
+.price{font-size:32px;font-weight:bold;color:#07844b}
+.qris{width:100%;max-width:280px;border-radius:12px}
+button{
+  width:100%;padding:14px;margin-top:12px;
+  border:0;border-radius:10px;
+  background:#07844b;color:white;
+  font-size:16px;font-weight:bold;cursor:pointer;
+}
+.secondary{background:#25352d}
+.small{font-size:13px;color:#64748b;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="font-size:42px">🔒</div>
+  <h2>Akses Nomor WhatsApp</h2>
+  <p>Bayar untuk meminta akses nomor WhatsApp.</p>
+
+  <div class="price">Rp55.000</div>
+  <p>Scan QRIS di bawah untuk melakukan pembayaran.</p>
+
+  <img class="qris" src="qris.png" alt="QRIS pembayaran">
+
+  <p class="small">
+    Setelah membayar, hubungi admin untuk konfirmasi.
+    Akses diberikan setelah pembayaran diperiksa.
+  </p>
+
+  <button onclick="konfirmasi()">
+    Konfirmasi Pembayaran
+  </button>
+
+  <button class="secondary" onclick="caraBayar()">
+    Cara Mendapatkan Akses
+  </button>
+</div>
+
+<script>
+const NOMOR_ADMIN = "628575072245";
+
+function konfirmasi(){
+  const pesan =
+    "Halo Admin, saya ingin meminta akses nomor WhatsApp.\n"+
+    "Harga: Rp55.000\n"+
+    "Nama pembeli: \n"+
+    "Waktu pembayaran: \n"+
+    "Mohon verifikasi pembayaran saya.";
+
+  window.open(
+    "https://wa.me/"+NOMOR_ADMIN+
+    "?text="+encodeURIComponent(pesan),
+    "_blank"
+  );
+}
+
+function caraBayar(){
+  alert(
+    "1. Bayar Rp55.000 melalui QRIS.\n"+
+    "2. Hubungi admin untuk konfirmasi.\n"+
+    "3. Setelah pembayaran diverifikasi, admin memberikan akses."
+  );
+}
+</script>
+</body>
+</html>
